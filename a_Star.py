@@ -28,11 +28,12 @@ def main():
 def next_state(graph,node,path,H,q,fn,path_queue,cost_path):
     while(True):
         for neighbors in graph[node]:
-            q.put((graph[node][neighbors]+H[neighbors]+fn,fn+graph[node][neighbors],f'{path}---->'+neighbors))
+            q.put((graph[node][neighbors]+H[neighbors]+fn,fn+graph[node][neighbors],f'{path}--->'+neighbors))
         if q.empty():
             return None
         new=q.get()
         path=new[2]
+        # print(path)
         node=path[-1:]
         fn=new[1]
         # print(path)

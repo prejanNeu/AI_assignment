@@ -30,6 +30,7 @@ def greedy_bfs(graph,H,node,fn,path,destination_node):
 
     new=q.get()
     path=new[2]
+    print (path)
     node=path[-1:]
     fn=new[1]
     if node==destination_node:
@@ -37,8 +38,6 @@ def greedy_bfs(graph,H,node,fn,path,destination_node):
     else: 
         return greedy_bfs(graph,H,node,fn,path,destination_node)
 
-
-        
 
 if __name__=="__main__":
     main()
